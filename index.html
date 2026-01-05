@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Site com Duas Imagens</title>
+  <title>NK — Antes e Depois</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +18,6 @@
       --text: #e5e7eb;
       --title: #f9fafb;
       --border: rgba(255,255,255,.15);
-      --glow1: #8b5cf6;
-      --glow2: #38bdf8;
-      --glow3: #22c55e;
     }
 
     body.light {
@@ -30,114 +27,91 @@
       --text: #1f2937;
       --title: #111827;
       --border: rgba(0,0,0,.12);
-      --glow1: #6366f1;
-      --glow2: #06b6d4;
-      --glow3: #10b981;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      font-family:'Poppins',sans-serif;
     }
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: linear-gradient(135deg, var(--bg1), var(--bg2));
-      padding: 20px 20px 70px;
-      color: var(--text);
+    body{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:20px 20px 60px;
+      background:linear-gradient(135deg,var(--bg1),var(--bg2));
+      color:var(--text);
     }
 
-    header {
-      width: 100%;
-      max-width: 1100px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      padding: 10px 12px;
-      margin-bottom: 14px;
-      background: rgba(15, 23, 42, 0.35);
-      backdrop-filter: blur(14px);
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.12);
+    header{
+      width:100%;
+      max-width:1100px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:12px;
     }
 
-    h1 {
-      font-size: 34px;
-      color: var(--title);
-      font-weight: 700;
-      opacity: 0;
-      animation: fadeSlide .9s ease forwards;
+    h1{
+      font-size:34px;
+      color:var(--title);
+      font-weight:700;
+      opacity:0;
+      animation:fade .8s forwards;
     }
 
-    @keyframes fadeSlide {
-      from {opacity: 0; transform: translateY(-10px);}
-      to {opacity: 1; transform: translateY(0);}
+    @keyframes fade{
+      from{opacity:0; transform:translateY(-10px);}
+      to{opacity:1; transform:translateY(0);}
     }
 
-    .theme-btn {
-      padding: 10px 18px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.08);
-      color: var(--text);
-      cursor: pointer;
+    .theme-btn{
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.08);
+      color:var(--text);
+      cursor:pointer;
     }
 
-    .description {
-      max-width: 900px;
-      text-align: center;
-      margin: 18px auto 24px;
+    .description{
+      max-width:900px;
+      text-align:center;
+      margin:18px auto 24px;
     }
 
-    .container {
-      max-width: 1100px;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
+    .container{
+      width:100%;
+      max-width:1100px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:32px;
     }
 
-    .card-wrap {
-      position: relative;
-      padding: 2px;
-      border-radius: 26px;
+    .card-wrap{
+      background:linear-gradient(145deg, rgba(56,189,248,.7), rgba(168,85,247,.7));
+      padding:2px;
+      border-radius:26px;
     }
 
-    .card-wrap::before {
-      content: "";
-      position: absolute;
-      inset: -3px;
-      border-radius: 30px;
-      background: linear-gradient(120deg, var(--glow1), var(--glow2), var(--glow3), var(--glow1));
-      background-size: 300% 300%;
-      filter: blur(10px);
-      animation: glowMove 6s ease infinite;
-      opacity: .9;
+    .img-box{
+      background:var(--card);
+      border-radius:24px;
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
+      min-height:520px;
+      box-shadow:0 14px 30px rgba(0,0,0,.45);
     }
 
-    @keyframes glowMove {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
-    }
-
-    .img-box {
-      background: var(--card);
-      border-radius: 24px;
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      min-height: 520px;
+    .label{
+      font-size:17px;
+      font-weight:600;
     }
 
     .img-box img{
@@ -148,19 +122,17 @@
       border:1.5px solid var(--border);
     }
 
-    .media{
-      margin-top:36px;
+    .video{
+      margin-top:30px;
+      max-width:900px;
       width:100%;
-      max-width:1000px;
-      text-align:center;
     }
 
-    .media iframe{
+    .video iframe{
       width:100%;
-      max-width:900px;
-      aspect-ratio:16/9;
-      border-radius:18px;
-      border:1px solid var(--border);
+      height:450px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.15);
     }
 
     footer{
@@ -170,12 +142,14 @@
 
     .socials a{
       margin:0 8px;
-      color:var(--text);
       text-decoration:none;
+      color:var(--text);
     }
 
     @media(max-width:700px){
-      .container{grid-template-columns:1fr}
+      .container{grid-template-columns:1fr; gap:18px;}
+      h1{font-size:28px;}
+      .video iframe{height:300px;}
     }
   </style>
 </head>
@@ -190,25 +164,31 @@
 <p class="description">descanse em pança</p>
 
 <div class="container">
+
   <div class="card-wrap">
     <div class="img-box">
       <div class="label">Antes</div>
-      <img src="img/antes.jpg">
+      <img src="img/antes.jpg" alt="Antes">
     </div>
   </div>
 
   <div class="card-wrap">
     <div class="img-box">
       <div class="label">Depois</div>
-      <img src="img/depois.jpg">
+      <img src="img/depois.jpg" alt="Depois">
     </div>
   </div>
+
 </div>
 
-<section class="media">
-  <h2>🎵 YouTube</h2>
-  <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=souonkkz" allowfullscreen></iframe>
-</section>
+<div class="video">
+  <iframe 
+    src="https://www.youtube.com/embed/UMB_vt5_LD4"
+    title="YouTube video player"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
 
 <footer>
   <p>Siga nas redes sociais:</p>
@@ -221,9 +201,14 @@
 
 <script>
   const btn = document.getElementById('themeToggle');
-  function toggle(){document.body.classList.toggle('light');
-  btn.textContent=document.body.classList.contains('light')?'🌙 Tema escuro':'☀️ Tema claro';}
-  btn.addEventListener('click',toggle); toggle();
+  function toggle(){
+    document.body.classList.toggle('light');
+    btn.textContent = document.body.classList.contains('light')
+      ? '🌙 Tema escuro'
+      : '☀️ Tema claro';
+  }
+  btn.addEventListener('click', toggle);
+  toggle();
 </script>
 
 </body>
