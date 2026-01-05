@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eonkzz</title>
+  <title>Site com Duas Imagens</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     :root {
-      --bg1: #0f172a;
-      --bg2: #020617;
+      --bg1: #1a1f4b;
+      --bg2: #3f2e6f;
       --card: #0b1220;
       --text: #e5e7eb;
       --title: #f9fafb;
@@ -20,8 +21,8 @@
     }
 
     body.light {
-      --bg1: #e8f0ff;
-      --bg2: #f7faff;
+      --bg1: #b3dfff;
+      --bg2: #e2e8ff;
       --card: #ffffff;
       --text: #1f2937;
       --title: #111827;
@@ -52,7 +53,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding-top: 6px;
     }
 
     h1 {
@@ -70,13 +75,14 @@
     }
 
     .theme-btn {
-      padding: 8px 14px;
+      padding: 10px 16px;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,.05);
+      background: rgba(255,255,255,.08);
       color: var(--text);
       cursor: pointer;
-      transition: background .2s ease, transform .1s ease;
+      transition: background .2s ease, transform .1s ease, box-shadow .2s ease;
+      backdrop-filter: blur(4px);
     }
 
     .theme-btn:hover { background: rgba(255,255,255,.12); }
@@ -178,12 +184,12 @@
 <body class="dark">
 
   <header>
-    <h1>Eonkkz</h1>
+    <h1>NK</h1>
     <button class="theme-btn" id="themeToggle">🌙 Tema escuro</button>
   </header>
 
   <p class="description">
-    descanse em pança, meu grande amigo se foi depois de uma gotica.
+    descanse em pança
   </p>
 
   <div class="container">
@@ -207,9 +213,9 @@
   <footer>
     <p>Siga nas redes sociais:</p>
     <div class="socials">
-      <a href="https://www.instagram.com/eonkkz/" target="_blank">Instagram</a>
-      <a href="https://x.com/Nkzinnn_" target="_blank">Twitter / X</a>
-      <a href="https://www.youtube.com/@souonkkz" target="_blank">YouTube</a>
+      <a href="https://www.instagram.com/eonkkz/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://x.com/Nkzinnn_" target="_blank"><i class="fab fa-x-twitter"></i> Twitter / X</a>
+      <a href="https://www.youtube.com/@souonkkz" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
     </div>
   </footer>
 
