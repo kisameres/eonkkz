@@ -4,12 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Site com Duas Imagens</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --bg1: #0f172a;
+      --bg2: #020617;
+      --card: #0b1220;
+      --text: #e5e7eb;
+      --title: #f9fafb;
+      --border: rgba(255,255,255,.15);
+    }
+
+    body.light {
+      --bg1: #e8f0ff;
+      --bg2: #f7faff;
+      --card: #ffffff;
+      --text: #1f2937;
+      --title: #111827;
+      --border: rgba(0,0,0,.12);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Poppins', Arial, Helvetica, sans-serif;
     }
 
     body {
@@ -17,43 +40,84 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #0f172a, #020617);
-      padding: 20px;
-      color: #e5e7eb;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      padding: 20px 20px 60px;
+      color: var(--text);
+      transition: background .25s ease, color .25s ease;
+    }
+
+    header {
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
     }
 
     h1 {
-      margin-bottom: 28px;
-      font-size: 32px;
-      color: #f9fafb;
+      font-size: 34px;
+      color: var(--title);
       letter-spacing: .5px;
+      font-weight: 700;
+      animation: fadeSlide .9s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeSlide {
+      from {opacity: 0; transform: translateY(-10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .theme-btn {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      cursor: pointer;
+      transition: background .2s ease, transform .1s ease;
+    }
+
+    .theme-btn:hover { background: rgba(255,255,255,.12); }
+    .theme-btn:active { transform: scale(.97); }
+
+    .description {
+      max-width: 900px;
       text-align: center;
+      margin: 18px auto 24px;
+      font-size: 15px;
+      opacity: .95;
     }
 
     .container {
       width: 100%;
-      max-width: 1000px;
+      max-width: 1100px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 32px;
     }
 
+    .card-wrap {
+      background: linear-gradient(145deg, rgba(56,189,248,.7), rgba(168,85,247,.7));
+      padding: 2px;
+      border-radius: 26px;
+    }
+
     .img-box {
-      background: #0b1220;
-      border-radius: 22px;
+      background: var(--card);
+      border-radius: 24px;
       padding: 18px;
-      box-shadow: 0 14px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.45);
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 14px;
-      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
       min-height: 520px;
     }
 
     .label {
-      color: #e5e7eb;
       font-size: 17px;
       font-weight: 600;
       text-align: center;
@@ -63,50 +127,112 @@
     .img-box img {
       width: 100%;
       height: 420px;
-      border-radius: 16px;
+      border-radius: 18px;
       object-fit: cover;
       filter: brightness(.98) contrast(1.05);
+      border: 1.5px solid var(--border);
     }
 
     .img-box:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 36px rgba(0,0,0,0.55);
-      background: #0e182d;
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 22px 40px rgba(0,0,0,0.55);
+      background: rgba(0,0,0,.2);
+    }
+
+    footer {
+      margin-top: 34px;
+      text-align: center;
+      opacity: .85;
+    }
+
+    .socials a {
+      margin: 0 8px;
+      text-decoration: none;
+      color: var(--text);
+      border-bottom: 1px dashed transparent;
+      transition: border .2s ease, opacity .2s ease;
+    }
+
+    .socials a:hover {
+      border-bottom: 1px dashed var(--text);
+      opacity: .9;
+    }
+
+    @media (max-width: 900px) {
+      .container { gap: 22px; }
+      .img-box { min-height: 480px; }
+      .img-box img { height: 380px; }
     }
 
     @media (max-width: 700px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-
-      body {
-        padding: 14px;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
+      header { flex-direction: column; gap: 10px; }
+      .container { grid-template-columns: 1fr; }
+      body { padding: 14px 14px 50px; }
+      h1 { font-size: 28px; }
+      .description { font-size: 14px; }
+      .img-box { min-height: 440px; }
+      .img-box img { height: 340px; }
     }
-
   </style>
 </head>
-<body>
+<body class="dark">
 
-  <h1>NK</h1>
+  <header>
+    <h1>NK</h1>
+    <button class="theme-btn" id="themeToggle">🌙 Tema escuro</button>
+  </header>
+
+  <p class="description">
+    Uma comparação visual mostrando a transformação antes e depois. Este espaço pode ser usado para contar a sua história, evolução,
+    jornada ou qualquer mudança importante que você queira destacar.
+  </p>
 
   <div class="container">
 
-    <div class="img-box">
-      <div class="label">Antes</div>
-      <img src="img/antes.jpg" alt="Antes" />
+    <div class="card-wrap">
+      <div class="img-box">
+        <div class="label">Antes</div>
+        <img src="img/antes.jpg" alt="Antes" />
+      </div>
     </div>
 
-    <div class="img-box">
-      <div class="label">Depois</div>
-      <img src="img/depois.jpg" alt="Depois" />
+    <div class="card-wrap">
+      <div class="img-box">
+        <div class="label">Depois</div>
+        <img src="img/depois.jpg" alt="Depois" />
+      </div>
     </div>
 
   </div>
+
+  <footer>
+    <p>Siga nas redes sociais:</p>
+    <div class="socials">
+      <a href="https://www.instagram.com/eonkkz/" target="_blank">Instagram</a>
+      <a href="#" target="_blank">Twitter</a>
+      <a href="#" target="_blank">YouTube</a>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    function updateLabel() {
+      if (body.classList.contains('light')) {
+        btn.textContent = '🌙 Tema escuro';
+      } else {
+        btn.textContent = '☀️ Tema claro';
+      }
+    }
+
+    btn.addEventListener('click', () => {
+      body.classList.toggle('light');
+      updateLabel();
+    });
+
+    updateLabel();
+  </script>
 
 </body>
 </html>
