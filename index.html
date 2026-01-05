@@ -18,6 +18,9 @@
       --text: #e5e7eb;
       --title: #f9fafb;
       --border: rgba(255,255,255,.15);
+      --glow1: #8b5cf6;
+      --glow2: #38bdf8;
+      --glow3: #22c55e;
     }
 
     body.light {
@@ -27,6 +30,9 @@
       --text: #1f2937;
       --title: #111827;
       --border: rgba(0,0,0,.12);
+      --glow1: #6366f1;
+      --glow2: #06b6d4;
+      --glow3: #10b981;
     }
 
     * {
@@ -42,9 +48,8 @@
       flex-direction: column;
       align-items: center;
       background: linear-gradient(135deg, var(--bg1), var(--bg2));
-      padding: 20px 20px 60px;
+      padding: 20px 20px 70px;
       color: var(--text);
-      transition: background .25s ease, color .25s ease;
     }
 
     header {
@@ -53,20 +58,23 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
       position: sticky;
       top: 0;
-      z-index: 10;
-      padding-top: 6px;
+      z-index: 20;
+      padding: 10px 12px;
+      margin-bottom: 14px;
+      background: rgba(15, 23, 42, 0.35);
+      backdrop-filter: blur(14px);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
     }
 
     h1 {
       font-size: 34px;
       color: var(--title);
-      letter-spacing: .5px;
       font-weight: 700;
-      animation: fadeSlide .9s ease forwards;
       opacity: 0;
+      animation: fadeSlide .9s ease forwards;
     }
 
     @keyframes fadeSlide {
@@ -75,169 +83,148 @@
     }
 
     .theme-btn {
-      padding: 10px 16px;
+      padding: 10px 18px;
       border-radius: 999px;
       border: 1px solid var(--border);
       background: rgba(255,255,255,.08);
       color: var(--text);
       cursor: pointer;
-      transition: background .2s ease, transform .1s ease, box-shadow .2s ease;
-      backdrop-filter: blur(4px);
     }
-
-    .theme-btn:hover { background: rgba(255,255,255,.12); }
-    .theme-btn:active { transform: scale(.97); }
 
     .description {
       max-width: 900px;
       text-align: center;
       margin: 18px auto 24px;
-      font-size: 15px;
-      opacity: .95;
     }
 
     .container {
-      width: 100%;
       max-width: 1100px;
+      width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 32px;
     }
 
     .card-wrap {
-      background: linear-gradient(145deg, rgba(56,189,248,.7), rgba(168,85,247,.7));
+      position: relative;
       padding: 2px;
       border-radius: 26px;
+    }
+
+    .card-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -3px;
+      border-radius: 30px;
+      background: linear-gradient(120deg, var(--glow1), var(--glow2), var(--glow3), var(--glow1));
+      background-size: 300% 300%;
+      filter: blur(10px);
+      animation: glowMove 6s ease infinite;
+      opacity: .9;
+    }
+
+    @keyframes glowMove {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
     }
 
     .img-box {
       background: var(--card);
       border-radius: 24px;
       padding: 18px;
-      box-shadow: 0 14px 30px rgba(0,0,0,0.45);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 14px;
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      gap: 12px;
       min-height: 520px;
     }
 
-    .label {
-      font-size: 17px;
-      font-weight: 600;
-      text-align: center;
-      letter-spacing: .2px;
+    .img-box img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+      border-radius:18px;
+      border:1.5px solid var(--border);
     }
 
-    .img-box img {
-      width: 100%;
-      height: 420px;
-      border-radius: 18px;
-      object-fit: cover;
-      filter: brightness(.98) contrast(1.05);
-      border: 1.5px solid var(--border);
+    .media{
+      margin-top:36px;
+      width:100%;
+      max-width:1000px;
+      text-align:center;
     }
 
-    .img-box:hover {
-      transform: translateY(-3px) scale(1.01);
-      box-shadow: 0 22px 40px rgba(0,0,0,0.55);
-      background: rgba(0,0,0,.2);
+    .media iframe{
+      width:100%;
+      max-width:900px;
+      aspect-ratio:16/9;
+      border-radius:18px;
+      border:1px solid var(--border);
     }
 
-    footer {
-      margin-top: 34px;
-      text-align: center;
-      opacity: .85;
+    footer{
+      margin-top:28px;
+      text-align:center;
     }
 
-    .socials a {
-      margin: 0 8px;
-      text-decoration: none;
-      color: var(--text);
-      border-bottom: 1px dashed transparent;
-      transition: border .2s ease, opacity .2s ease;
+    .socials a{
+      margin:0 8px;
+      color:var(--text);
+      text-decoration:none;
     }
 
-    .socials a:hover {
-      border-bottom: 1px dashed var(--text);
-      opacity: .9;
-    }
-
-    @media (max-width: 900px) {
-      .container { gap: 22px; }
-      .img-box { min-height: 480px; }
-      .img-box img { height: 380px; }
-    }
-
-    @media (max-width: 700px) {
-      header { flex-direction: column; gap: 10px; }
-      .container { grid-template-columns: 1fr; }
-      body { padding: 14px 14px 50px; }
-      h1 { font-size: 28px; }
-      .description { font-size: 14px; }
-      .img-box { min-height: 440px; }
-      .img-box img { height: 340px; }
+    @media(max-width:700px){
+      .container{grid-template-columns:1fr}
     }
   </style>
 </head>
-<body class="dark">
 
-  <header>
-    <h1>NK</h1>
-    <button class="theme-btn" id="themeToggle">🌙 Tema escuro</button>
-  </header>
+<body>
 
-  <p class="description">
-    descanse em pança
-  </p>
+<header>
+  <h1>NK</h1>
+  <button id="themeToggle" class="theme-btn">🌙 Tema escuro</button>
+</header>
 
-  <div class="container">
+<p class="description">descanse em pança</p>
 
-    <div class="card-wrap">
-      <div class="img-box">
-        <div class="label">Antes</div>
-        <img src="img/antes.jpg" alt="Antes" />
-      </div>
+<div class="container">
+  <div class="card-wrap">
+    <div class="img-box">
+      <div class="label">Antes</div>
+      <img src="img/antes.jpg">
     </div>
-
-    <div class="card-wrap">
-      <div class="img-box">
-        <div class="label">Depois</div>
-        <img src="img/depois.jpg" alt="Depois" />
-      </div>
-    </div>
-
   </div>
 
-  <footer>
-    <p>Siga nas redes sociais:</p>
-    <div class="socials">
-      <a href="https://www.instagram.com/eonkkz/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-      <a href="https://x.com/Nkzinnn_" target="_blank"><i class="fab fa-x-twitter"></i> Twitter / X</a>
-      <a href="https://www.youtube.com/@souonkkz" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+  <div class="card-wrap">
+    <div class="img-box">
+      <div class="label">Depois</div>
+      <img src="img/depois.jpg">
     </div>
-  </footer>
+  </div>
+</div>
 
-  <script>
-    const btn = document.getElementById('themeToggle');
-    const body = document.body;
+<section class="media">
+  <h2>🎵 YouTube</h2>
+  <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=souonkkz" allowfullscreen></iframe>
+</section>
 
-    function updateLabel() {
-      if (body.classList.contains('light')) {
-        btn.textContent = '🌙 Tema escuro';
-      } else {
-        btn.textContent = '☀️ Tema claro';
-      }
-    }
+<footer>
+  <p>Siga nas redes sociais:</p>
+  <div class="socials">
+    <a href="https://www.instagram.com/eonkkz/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    <a href="https://x.com/Nkzinnn_" target="_blank"><i class="fab fa-x-twitter"></i> Twitter / X</a>
+    <a href="https://www.youtube.com/@souonkkz" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+  </div>
+</footer>
 
-    btn.addEventListener('click', () => {
-      body.classList.toggle('light');
-      updateLabel();
-    });
-
-    updateLabel();
-  </script>
+<script>
+  const btn = document.getElementById('themeToggle');
+  function toggle(){document.body.classList.toggle('light');
+  btn.textContent=document.body.classList.contains('light')?'🌙 Tema escuro':'☀️ Tema claro';}
+  btn.addEventListener('click',toggle); toggle();
+</script>
 
 </body>
 </html>
