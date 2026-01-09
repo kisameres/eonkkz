@@ -7,236 +7,231 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg1:#0b1220;
-  --bg2:#111827;
-  --card:#0f172a;
-  --text:#cbd5e1;
-  --title:#e5e7eb;
-  --border:rgba(255,255,255,.08);
-  --accent:#94a3b8;
-  --paper:#f5f2eb;
+  --bg:#000;
+  --text:#e6e6e6;
+  --title:#fff;
+  --border:rgba(255,255,255,.18);
+  --paper:#fff;
 }
 
-body.light{
-  --bg1:#f1f5f9;
-  --bg2:#e2e8f0;
-  --card:#ffffff;
-  --text:#334155;
-  --title:#0f172a;
-  --border:rgba(0,0,0,.1);
-  --paper:#faf7f2;
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 
 body{
   min-height:100vh;
-  background:linear-gradient(180deg,var(--bg1),var(--bg2));
+  background:var(--bg);
   color:var(--text);
   font-family:Inter,system-ui,sans-serif;
   display:flex;
   flex-direction:column;
   align-items:center;
-  padding:32px 20px 64px;
+  padding:40px 20px 90px;
 }
+
+img{filter:grayscale(100%) contrast(1.08)}
 
 header{
   width:100%;
   max-width:1100px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:42px;
+  text-align:center;
+  margin-bottom:50px;
 }
 
 h1{
   font-size:30px;
   font-weight:500;
-  color:var(--title);
+  letter-spacing:.3px;
 }
 
 .subtitle{
-  font-size:12px;
+  font-size:11px;
   opacity:.45;
-  margin-top:6px;
-}
-
-.theme-btn{
-  padding:9px 14px;
-  border-radius:999px;
-  border:1px solid var(--border);
-  background:transparent;
-  color:var(--text);
-  cursor:pointer;
-  font-size:12px;
+  margin-top:8px;
 }
 
 .description{
   max-width:760px;
   text-align:center;
   font-size:15px;
-  line-height:1.7;
-  opacity:.65;
-  margin-bottom:52px;
+  line-height:1.9;
+  opacity:.6;
+  margin-bottom:64px;
 }
 
-/* Antes / Depois */
+/* antes / depois */
 .container{
   width:100%;
   max-width:1100px;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:32px;
-}
-
-.card-wrap{
-  padding:1px;
-  border-radius:22px;
-  background:linear-gradient(
-    180deg,
-    rgba(255,255,255,.06),
-    rgba(255,255,255,.01)
-  );
+  gap:36px;
 }
 
 .img-box{
-  background:var(--card);
-  border-radius:21px;
-  padding:18px;
+  border:1px solid var(--border);
+  padding:22px;
+  border-radius:14px;
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:10px;
-  min-height:500px;
-  border:1px solid var(--border);
 }
 
 .label{
-  font-size:12px;
-  letter-spacing:.6px;
-  opacity:.55;
+  font-size:11px;
+  letter-spacing:.7px;
+  opacity:.5;
   text-transform:uppercase;
-}
-
-.tip{
-  font-size:12px;
-  opacity:.4;
 }
 
 .img-box img{
   width:100%;
-  height:420px;
+  height:360px;
   object-fit:cover;
-  border-radius:16px;
+  border-radius:10px;
   border:1px solid var(--border);
-  filter:saturate(.85) contrast(.95);
+  margin:18px 0;
 }
 
-/* 📚 FRAGMENTOS */
+.caption-poem{
+  font-family:"Libre Baskerville",serif;
+  font-size:13px;
+  line-height:1.75;
+  text-align:center;
+  opacity:.7;
+}
+
+/* intervalo */
+.interval{
+  margin:100px 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:28px;
+}
+
+.interval .line{
+  width:140px;
+  height:1px;
+  background:rgba(255,255,255,.3);
+}
+
+.interval .void{
+  width:100%;
+  max-width:480px;
+  height:100px;
+  border:1px solid rgba(255,255,255,.14);
+  opacity:.22;
+}
+
+/* poema */
+.poem{
+  margin:96px 0 60px;
+  max-width:760px;
+  font-family:"Libre Baskerville",serif;
+  font-size:15px;
+  line-height:2;
+  text-align:center;
+  opacity:.9;
+}
+
+.poem span{display:block}
+
+/* fragmentos */
 .books{
-  margin-top:90px;
+  margin-top:80px;
   max-width:1000px;
   width:100%;
 }
 
 .era{
-  margin-bottom:56px;
+  margin-bottom:64px;
 }
 
 .era h2{
-  font-size:14px;
-  font-weight:500;
-  letter-spacing:.4px;
+  font-size:12px;
+  letter-spacing:.6px;
   text-transform:uppercase;
-  opacity:.55;
-  margin-bottom:22px;
+  opacity:.5;
+  margin-bottom:26px;
   text-align:center;
 }
 
 .book-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:26px;
+  gap:30px;
 }
 
 .page{
   background:var(--paper);
-  color:#1f2937;
-  padding:26px 24px;
-  border-radius:14px;
+  color:#111;
+  padding:30px 28px;
+  border-radius:12px;
   font-family:"Libre Baskerville",serif;
   font-size:14px;
-  line-height:1.65;
-  box-shadow:0 12px 30px rgba(0,0,0,.25);
-  position:relative;
+  line-height:1.75;
+  box-shadow:0 16px 36px rgba(0,0,0,.45);
 }
 
-.page::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  border-radius:14px;
-  box-shadow:inset 0 0 0 1px rgba(0,0,0,.05);
+.author{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:18px;
+}
+
+.author img{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+}
+
+.author span{
+  font-size:11px;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  opacity:.6;
 }
 
 .page em{
   display:block;
-  margin-top:18px;
+  margin-top:22px;
   font-size:12px;
-  opacity:.65;
-}
-
-/* vídeo */
-.video{
-  margin-top:80px;
-  max-width:900px;
-  width:100%;
-}
-
-.video iframe{
-  width:100%;
-  height:420px;
-  border-radius:16px;
-  border:1px solid var(--border);
-}
-
-.footer-note{
-  margin-top:48px;
-  font-size:14px;
-  opacity:.55;
-  text-align:center;
-  max-width:720px;
-  line-height:1.6;
-}
-
-footer{
-  margin-top:32px;
-  text-align:center;
-  font-size:13px;
   opacity:.6;
 }
 
+/* rodapé */
+footer{
+  margin-top:100px;
+  font-size:12px;
+  opacity:.55;
+  text-align:center;
+}
+
+.socials{
+  margin-top:18px;
+}
+
 .socials a{
-  margin:0 10px;
   color:var(--text);
   text-decoration:none;
+  margin:0 12px;
+  font-size:12px;
+  letter-spacing:.4px;
+  opacity:.65;
+}
+
+.socials a:hover{
+  opacity:1;
 }
 
 @media(max-width:700px){
-  .container{grid-template-columns:1fr;}
-  h1{font-size:24px;}
-  .video iframe{height:300px;}
+  .container{grid-template-columns:1fr}
+  h1{font-size:24px}
 }
 </style>
 </head>
@@ -244,104 +239,95 @@ footer{
 <body>
 
 <header>
-  <div>
-    <h1>Antes e Depois</h1>
-    <div class="subtitle">registro pessoal</div>
-  </div>
-  <button id="themeToggle" class="theme-btn">Tema</button>
+  <h1>Antes e Depois</h1>
+  <div class="subtitle">memoria consignata</div>
 </header>
 
 <p class="description">
-  algumas mudanças não fazem barulho.<br>
-  elas atravessam o tempo.
+  Certas mutações não se anunciam.<br>
+  Não irrompem, não disputam lugar.<br>
+  Apenas subsistem, até que tudo o mais cesse.
 </p>
 
 <div class="container">
-  <div class="card-wrap">
-    <div class="img-box">
-      <div class="label">Antes</div>
-      <div class="tip">quando tudo parecia imóvel</div>
-      <img src="img/antes.jpg" alt="Antes" loading="lazy">
+
+  <div class="img-box">
+    <div class="label">Antes</div>
+    <img src="img/antes.jpg" alt="Antes">
+    <div class="caption-poem">
+      Aqui a forma precedia o juízo.<br>
+      O tempo ainda não pesava.
     </div>
   </div>
 
-  <div class="card-wrap">
-    <div class="img-box">
-      <div class="label">Depois</div>
-      <div class="tip">quando já não era mais</div>
-      <img src="img/depois.jpg" alt="Depois" loading="lazy">
+  <div class="img-box">
+    <div class="label">Depois</div>
+    <img src="img/depois.jpg" alt="Depois">
+    <div class="caption-poem">
+      Aqui resta o vestígio, não o ato.<br>
+      O tempo cumpriu sua medida.
     </div>
   </div>
+
 </div>
 
-<!-- 📚 FRAGMENTOS POR ÉPOCA -->
+<div class="interval">
+  <div class="line"></div>
+  <div class="void"></div>
+  <div class="line"></div>
+</div>
+
+<div class="poem">
+  <span>Entre o que foi e o que cessou de sê-lo,</span>
+  <span>não se abriu ruína, mas ínterim.</span>
+  <span>Nele, o ser não avança nem recua;</span>
+  <span>consente apenas em permanecer.</span>
+</div>
+
 <section class="books">
 
   <div class="era">
     <h2>antiguidade</h2>
     <div class="book-grid">
+
       <div class="page">
-        “Não é que temos pouco tempo, mas desperdiçamos muito.”
-        <em>— sêneca</em>
+        <div class="author">
+          <img src="img/seneca.jpg" alt="Sêneca">
+          <span>Sêneca</span>
+        </div>
+        “Não carecemos de tempo, mas o deixamos perder.”
+        <em>— Cartas a Lucílio</em>
       </div>
 
       <div class="page">
-        “Nenhum vento sopra a favor de quem não sabe para onde vai.”
-        <em>— sênica</em>
+        <div class="author">
+          <img src="img/marco-aurelio.jpg" alt="Marco Aurélio">
+          <span>Marco Aurélio</span>
+        </div>
+        “Quase tudo quanto dizemos excede o preciso.”
+        <em>— Meditações</em>
       </div>
 
-      <div class="page">
-        “A maior parte do que dizemos não é necessária.”
-        <em>— marco aurélio</em>
-      </div>
     </div>
   </div>
 
   <div class="era">
     <h2>idade moderna</h2>
     <div class="book-grid">
-      <div class="page">
-        “Quem luta com monstros deve cuidar para não se tornar um.”
-        <em>— nietzsche</em>
-      </div>
 
       <div class="page">
-        “O homem se acostuma até com o abismo.”
-        <em>— fragmentos póstumos</em>
-      </div>
-    </div>
-  </div>
-
-  <div class="era">
-    <h2>reflexões</h2>
-    <div class="book-grid">
-      <div class="page">
-        “O que mais dói não é a perda, mas o hábito.”
-        <em>— anotações antigas</em>
+        <div class="author">
+          <img src="img/nietzsche.jpg" alt="Friedrich Nietzsche">
+          <span>Friedrich Nietzsche</span>
+        </div>
+        “Aquele que combate monstros deve vigiar a si mesmo.”
+        <em>— Além do Bem e do Mal</em>
       </div>
 
-      <div class="page">
-        “O tempo não avisa quando muda as coisas.”
-        <em>— caderno pessoal</em>
-      </div>
     </div>
   </div>
 
 </section>
-
-<div class="video">
-  <iframe
-    loading="lazy"
-    src="https://www.youtube.com/embed/UMB_vt5_LD4"
-    title="YouTube video player"
-    allowfullscreen>
-  </iframe>
-</div>
-
-<p class="footer-note">
-  algumas leituras não ensinam.<br>
-  apenas acompanham.
-</p>
 
 <footer>
   <p>em outros lugares:</p>
@@ -350,18 +336,8 @@ footer{
     <a href="https://x.com/Nkzinnn_" target="_blank">X</a>
     <a href="https://www.youtube.com/@souonkkz" target="_blank">YouTube</a>
   </div>
+  <p style="margin-top:14px;">scriptum manet.</p>
 </footer>
-
-<script>
-const btn = document.getElementById('themeToggle');
-if(localStorage.theme === 'light') document.body.classList.add('light');
-
-btn.onclick = () => {
-  document.body.classList.toggle('light');
-  localStorage.theme =
-    document.body.classList.contains('light') ? 'light' : 'dark';
-};
-</script>
 
 </body>
 </html>
