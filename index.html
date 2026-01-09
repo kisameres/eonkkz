@@ -3,32 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NK — Antes e Depois</title>
+<title>Registro — Antes e Depois</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg1:#1a1f4b;
-  --bg2:#3f2e6f;
+  --bg1:#0f172a;
+  --bg2:#1e293b;
   --card:#0b1220;
   --text:#e5e7eb;
-  --title:#f9fafb;
-  --border:rgba(255,255,255,.15);
+  --title:#f8fafc;
+  --border:rgba(255,255,255,.12);
 }
 
 body.light{
-  --bg1:#cfe8ff;
-  --bg2:#eef2ff;
+  --bg1:#eef2f7;
+  --bg2:#e5e9f2;
   --card:#ffffff;
   --text:#1f2937;
-  --title:#111827;
-  --border:rgba(0,0,0,.15);
+  --title:#0f172a;
+  --border:rgba(0,0,0,.12);
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Inter,system-ui,sans-serif;
+}
+
+html{scroll-behavior:smooth}
 
 body{
   min-height:100vh;
@@ -37,64 +44,67 @@ body{
   display:flex;
   flex-direction:column;
   align-items:center;
-  padding:20px;
+  padding:28px 20px 60px;
 }
 
 header{
-  max-width:1000px;
   width:100%;
+  max-width:1000px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  backdrop-filter:blur(10px);
-  background:rgba(255,255,255,.06);
-  padding:14px 18px;
-  border-radius:18px;
+  margin-bottom:48px;
 }
 
 h1{
-  font-size:30px;
+  font-size:32px;
+  font-weight:600;
   color:var(--title);
+  letter-spacing:.4px;
 }
 
-.badge{
-  font-size:12px;
-  padding:6px 12px;
-  border-radius:999px;
-  border:1px solid var(--border);
-  display:inline-block;
+.subtitle{
+  font-size:13px;
+  opacity:.6;
   margin-top:6px;
 }
 
 button{
-  border-radius:999px;
   border:1px solid var(--border);
-  background:rgba(255,255,255,.1);
+  background:transparent;
   color:var(--text);
   padding:10px 14px;
+  border-radius:999px;
   cursor:pointer;
+  font-size:13px;
+}
+
+button:hover{
+  background:rgba(255,255,255,.05);
 }
 
 .description{
-  max-width:800px;
+  max-width:720px;
   text-align:center;
-  margin:20px 0 26px;
-  opacity:.9;
+  font-size:15px;
+  line-height:1.6;
+  opacity:.75;
+  margin-bottom:48px;
 }
 
 .slider{
-  max-width:900px;
   width:100%;
+  max-width:900px;
   position:relative;
-  border-radius:24px;
+  border-radius:22px;
   overflow:hidden;
-  border:1px solid var(--border);
   background:var(--card);
+  border:1px solid var(--border);
 }
 
 .slider img{
   width:100%;
-  height:420px;
+  height:440px;
   object-fit:cover;
   display:block;
 }
@@ -106,37 +116,46 @@ button{
   overflow:hidden;
 }
 
+.divider{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  width:1px;
+  background:rgba(255,255,255,.35);
+  pointer-events:none;
+}
+
+.tag{
+  position:absolute;
+  top:14px;
+  font-size:12px;
+  padding:6px 12px;
+  border-radius:999px;
+  background:rgba(0,0,0,.45);
+  color:#fff;
+  letter-spacing:.3px;
+}
+
+.tag.left{left:14px}
+.tag.right{right:14px}
+
 .range{
   width:100%;
-  margin-top:14px;
+  max-width:900px;
+  margin:18px 0 42px;
 }
 
-.counter{
-  margin-top:14px;
+.footer-note{
+  max-width:700px;
+  text-align:center;
   font-size:14px;
-  opacity:.7;
-}
-
-.actions{
-  margin-top:18px;
-  display:flex;
-  gap:12px;
-}
-
-.foibase{
-  display:none;
-  margin-top:20px;
-  font-size:22px;
-  font-weight:700;
-  animation:pulse .6s infinite alternate;
-}
-
-@keyframes pulse{
-  from{opacity:.6}
-  to{opacity:1}
+  opacity:.6;
+  margin-top:40px;
 }
 
 @media(max-width:700px){
+  h1{font-size:26px}
   .slider img{height:300px}
 }
 </style>
@@ -146,63 +165,52 @@ button{
 
 <header>
   <div>
-    <h1>Eonkkz na vida</h1>
-    <span class="badge">100% real • sem fake</span>
+    <h1>Registro visual</h1>
+    <div class="subtitle">arquivo • 2026</div>
   </div>
-  <button id="theme">🌙 Tema</button>
+  <button id="theme">Tema</button>
 </header>
 
 <p class="description">
-  descanse em pança 😔<br>
-  foi de base após uma sentada de uma gótica rabuda.
+  algumas mudanças não precisam de explicação.<br>
+  o tempo costuma fazer isso melhor que qualquer narrativa.
 </p>
 
 <div class="slider">
-  <img src="img/antes.jpg" alt="Antes">
+  <span class="tag left">Antes</span>
+  <span class="tag right">Depois</span>
+
+  <img src="img/antes.jpg" alt="Antes" loading="lazy">
   <div class="after" id="after">
-    <img src="img/depois.jpg" alt="Depois">
+    <img src="img/depois.jpg" alt="Depois" loading="lazy">
   </div>
+  <div class="divider" id="divider"></div>
 </div>
 
 <input type="range" min="0" max="100" value="50" class="range" id="range">
 
-<div class="counter">
-  👀 1.284 pessoas já riram disso
-</div>
-
-<div class="actions">
-  <button id="som">🔊 Som</button>
-  <button id="base">💀 Foi de base</button>
-</div>
-
-<div class="foibase" id="foi">
-  FOI DE BASE ☠️
-</div>
-
-<audio id="audio">
-  <source src="https://www.myinstants.com/media/sounds/vine-boom.mp3">
-</audio>
+<p class="footer-note">
+  isso não é um antes e depois.<br>
+  é só o tempo fazendo o trabalho dele.
+</p>
 
 <script>
 const range = document.getElementById('range');
 const after = document.getElementById('after');
-range.oninput = ()=> after.style.width = range.value+'%';
+const divider = document.getElementById('divider');
 
-const themeBtn = document.getElementById('theme');
-if(localStorage.theme==='light') document.body.classList.add('light');
-
-themeBtn.onclick = ()=>{
-  document.body.classList.toggle('light');
-  localStorage.theme = document.body.classList.contains('light')?'light':'dark';
+range.oninput = () => {
+  after.style.width = range.value + '%';
+  divider.style.left = range.value + '%';
 };
 
-const audio = document.getElementById('audio');
-document.getElementById('som').onclick = ()=> audio.play();
+const themeBtn = document.getElementById('theme');
+if(localStorage.theme === 'light') document.body.classList.add('light');
 
-const foi = document.getElementById('foi');
-document.getElementById('base').onclick = ()=>{
-  foi.style.display='block';
-  setTimeout(()=>foi.style.display='none',2000);
+themeBtn.onclick = () => {
+  document.body.classList.toggle('light');
+  localStorage.theme =
+    document.body.classList.contains('light') ? 'light' : 'dark';
 };
 </script>
 
