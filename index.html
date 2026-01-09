@@ -18,14 +18,6 @@
   --paper:#fff;
 }
 
-body.light{
-  --bg:#fff;
-  --text:#111;
-  --title:#000;
-  --border:rgba(0,0,0,.3);
-  --paper:#fff;
-}
-
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 
@@ -40,9 +32,7 @@ body{
   padding:32px 20px 64px;
 }
 
-img{
-  filter:grayscale(100%) contrast(1.05);
-}
+img{filter:grayscale(100%) contrast(1.05)}
 
 header{
   width:100%;
@@ -53,27 +43,8 @@ header{
   margin-bottom:42px;
 }
 
-h1{
-  font-size:30px;
-  font-weight:500;
-  color:var(--title);
-}
-
-.subtitle{
-  font-size:12px;
-  opacity:.45;
-  margin-top:6px;
-}
-
-.theme-btn{
-  padding:9px 14px;
-  border-radius:999px;
-  border:1px solid var(--border);
-  background:transparent;
-  color:var(--text);
-  cursor:pointer;
-  font-size:12px;
-}
+h1{font-size:30px;font-weight:500;color:var(--title)}
+.subtitle{font-size:12px;opacity:.45;margin-top:6px}
 
 .description{
   max-width:760px;
@@ -84,6 +55,7 @@ h1{
   margin-bottom:52px;
 }
 
+/* ANTES / DEPOIS */
 .container{
   width:100%;
   max-width:1100px;
@@ -99,7 +71,6 @@ h1{
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:10px;
 }
 
 .label{
@@ -109,20 +80,25 @@ h1{
   text-transform:uppercase;
 }
 
-.tip{
-  font-size:12px;
-  opacity:.4;
-}
-
 .img-box img{
   width:100%;
-  height:420px;
+  height:380px;
   object-fit:cover;
   border-radius:12px;
   border:1px solid var(--border);
+  margin:16px 0;
 }
 
-/* 🕯️ POEMA */
+/* poema curto sob imagens */
+.caption-poem{
+  font-family:"Libre Baskerville",serif;
+  font-size:13px;
+  line-height:1.6;
+  text-align:center;
+  opacity:.75;
+}
+
+/* poema central */
 .poem{
   margin:90px 0;
   max-width:720px;
@@ -130,24 +106,28 @@ h1{
   font-size:15px;
   line-height:1.9;
   text-align:center;
-  opacity:.85;
+  opacity:.9;
 }
 
-.poem span{
-  display:block;
-  margin-bottom:10px;
+.poem span{display:block}
+
+/* glosas poéticas */
+.gloss{
+  margin:70px 0 20px;
+  font-family:"Libre Baskerville",serif;
+  font-size:14px;
+  text-align:center;
+  opacity:.55;
 }
 
-/* 📚 FRAGMENTOS */
+/* fragmentos */
 .books{
-  margin-top:60px;
+  margin-top:40px;
   max-width:1000px;
   width:100%;
 }
 
-.era{
-  margin-bottom:56px;
-}
+.era{margin-bottom:56px}
 
 .era h2{
   font-size:13px;
@@ -188,7 +168,6 @@ h1{
   height:42px;
   border-radius:50%;
   object-fit:cover;
-  border:1px solid rgba(0,0,0,.2);
 }
 
 .author span{
@@ -205,19 +184,8 @@ h1{
   opacity:.65;
 }
 
-.hidden-note{
-  margin-top:90px;
-  font-size:13px;
-  opacity:0;
-  transition:opacity 2s ease;
-  text-align:center;
-  max-width:640px;
-}
-
-.hidden-note.show{opacity:.45}
-
 footer{
-  margin-top:60px;
+  margin-top:80px;
   font-size:13px;
   opacity:.6;
   text-align:center;
@@ -237,7 +205,6 @@ footer{
     <h1>Antes e Depois</h1>
     <div class="subtitle">memoria consignada</div>
   </div>
-  <button id="themeToggle" class="theme-btn">claridade / treva</button>
 </header>
 
 <p class="description">
@@ -246,30 +213,45 @@ footer{
 </p>
 
 <div class="container">
+
   <div class="img-box">
     <div class="label">Antes</div>
-    <div class="tip">quando nada se movia</div>
     <img src="img/antes.jpg" alt="Antes">
+    <div class="caption-poem">
+      Aqui a forma ainda sustentava o nome.<br>
+      Nada urgia, nada faltava.<br>
+      O mundo repousava em si.
+    </div>
   </div>
 
   <div class="img-box">
     <div class="label">Depois</div>
-    <div class="tip">quando já cessara</div>
     <img src="img/depois.jpg" alt="Depois">
+    <div class="caption-poem">
+      Aqui já não há promessa.<br>
+      Resta o traço, não o gesto.<br>
+      O tempo cumpriu seu ofício.
+    </div>
   </div>
+
 </div>
 
-<!-- 🕯️ POEMA ERUDITO -->
+<!-- poema central -->
 <div class="poem">
-  <span>Entre o que foi e o que já não se sustém,</span>
-  <span>ergueu-se o intervalo — não de ruína, mas de peso.</span>
-  <span>Ali, o tempo deixou de correr</span>
-  <span>e passou a permanecer.</span>
+  <span>Entre o que foi e o que cessou de sê-lo,</span>
+  <span>ergueu-se um intervalo sem voz.</span>
+  <span>Não foi perda, nem queda,</span>
+  <span>mas o peso exato da permanência.</span>
   <br>
-  <span>O antes guardava a forma;</span>
-  <span>o depois reteve o vestígio.</span>
-  <span>Entre ambos, nada se perdeu —</span>
-  <span>apenas se tornou irreversível.</span>
+  <span>O antes guardava a figura.</span>
+  <span>O depois reteve o vestígio.</span>
+  <span>E o intervalo —</span>
+  <span>esse não se deixa nomear.</span>
+</div>
+
+<div class="gloss">
+  o que permanece não clama por memória;<br>
+  apenas consente em durar.
 </div>
 
 <section class="books">
@@ -317,28 +299,9 @@ footer{
 
 </section>
 
-<p class="hidden-note" id="hiddenNote">
-  nem tudo foi traçado para ser achado.
-</p>
-
 <footer>
   <p>scriptum manet.</p>
 </footer>
-
-<script>
-const btn = document.getElementById('themeToggle');
-if(localStorage.theme === 'light') document.body.classList.add('light');
-
-btn.onclick = () => {
-  document.body.classList.toggle('light');
-  localStorage.theme =
-    document.body.classList.contains('light') ? 'light' : 'dark';
-};
-
-setTimeout(()=>{
-  document.getElementById("hiddenNote").classList.add("show");
-}, 45000);
-</script>
 
 </body>
 </html>
