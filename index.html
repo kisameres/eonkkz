@@ -60,7 +60,7 @@ h1{
   opacity:.35;
 }
 
-/* descrição */
+/* abertura */
 .description{
   max-width:760px;
   text-align:center;
@@ -155,9 +155,24 @@ h1{
   opacity:.22;
 }
 
-/* poema */
+/* poema em latim */
+.latin-poem{
+  margin:90px 0 70px;
+  max-width:720px;
+  font-family:"Libre Baskerville",serif;
+  font-size:15px;
+  line-height:1.95;
+  text-align:center;
+  opacity:.9;
+}
+
+.latin-poem span{
+  display:block;
+}
+
+/* poema principal */
 .poem{
-  margin:96px 0 60px;
+  margin:90px 0 60px;
   max-width:760px;
   font-family:"Libre Baskerville",serif;
   font-size:15px;
@@ -167,90 +182,6 @@ h1{
 }
 
 .poem span{display:block}
-
-/* revelação tardia */
-.late{
-  margin-top:80px;
-  font-family:"Libre Baskerville",serif;
-  font-size:13px;
-  text-align:center;
-  opacity:0;
-  transition:opacity 2s ease;
-}
-
-/* imagem sem nome */
-.unnamed{
-  margin:90px 0;
-  width:100%;
-  max-width:480px;
-  height:260px;
-  border:1px solid rgba(255,255,255,.18);
-  opacity:.25;
-}
-
-/* fragmentos */
-.books{
-  margin-top:90px;
-  max-width:1000px;
-  width:100%;
-}
-
-.era{
-  margin-bottom:64px;
-}
-
-.era h2{
-  font-size:12px;
-  letter-spacing:.6px;
-  text-transform:uppercase;
-  opacity:.5;
-  margin-bottom:26px;
-  text-align:center;
-}
-
-.book-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-}
-
-.page{
-  background:var(--paper);
-  color:#111;
-  padding:30px 28px;
-  border-radius:12px;
-  font-family:"Libre Baskerville",serif;
-  font-size:14px;
-  line-height:1.75;
-  box-shadow:0 16px 36px rgba(0,0,0,.45);
-}
-
-.author{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  margin-bottom:18px;
-}
-
-.author img{
-  width:42px;
-  height:42px;
-  border-radius:50%;
-}
-
-.author span{
-  font-size:11px;
-  letter-spacing:.5px;
-  text-transform:uppercase;
-  opacity:.6;
-}
-
-.page em{
-  display:block;
-  margin-top:22px;
-  font-size:12px;
-  opacity:.6;
-}
 
 /* rodapé */
 footer{
@@ -329,6 +260,19 @@ footer{
   <div class="line"></div>
 </div>
 
+<!-- 🕯️ POEMA EM LATIM MEDIEVAL -->
+<div class="latin-poem">
+  <span>Quod fuit non redit,</span>
+  <span>sed umbra eius manet.</span>
+  <span>Tempus transit sine voce,</span>
+  <span>et forma solvitur in signum.</span>
+  <br>
+  <span>Non omnia pereunt;</span>
+  <span>quae scripta sunt, durant.</span>
+  <span>Inter initium et finem,</span>
+  <span>silentium habitat.</span>
+</div>
+
 <div class="poem">
   <span>Entre o que foi e o que cessou de sê-lo,</span>
   <span>não se abriu ruína, mas ínterim.</span>
@@ -336,73 +280,14 @@ footer{
   <span>consente apenas em permanecer.</span>
 </div>
 
-<div class="marginal">hoc manet</div>
-
-<div class="unnamed"></div>
-
-<section class="books">
-
-  <div class="era">
-    <h2>antiguidade</h2>
-    <div class="book-grid">
-
-      <div class="page">
-        <div class="author">
-          <img src="img/seneca.jpg" alt="Sêneca">
-          <span>Sêneca</span>
-        </div>
-        “Não carecemos de tempo, mas o deixamos perder.”
-        <em>— Cartas a Lucílio</em>
-      </div>
-
-      <div class="page">
-        <div class="author">
-          <img src="img/marco-aurelio.jpg" alt="Marco Aurélio">
-          <span>Marco Aurélio</span>
-        </div>
-        “Quase tudo quanto dizemos excede o preciso.”
-        <em>— Meditações</em>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="era">
-    <h2>idade moderna</h2>
-    <div class="book-grid">
-
-      <div class="page">
-        <div class="author">
-          <img src="img/nietzsche.jpg" alt="Friedrich Nietzsche">
-          <span>Friedrich Nietzsche</span>
-        </div>
-        “Aquele que combate monstros deve vigiar a si mesmo.”
-        <em>— Além do Bem e do Mal</em>
-      </div>
-
-    </div>
-  </div>
-
-</section>
-
-<div class="late" id="lateText">
-  tarde demais não é o mesmo que nunca.
-</div>
-
 <footer>
-  <p>kisame.org.</p>
+  <p>scriptum manet.</p>
   <div class="socials">
     <a href="https://www.instagram.com/eonkkz/" target="_blank">Instagram</a>
     <a href="https://x.com/Nkzinnn_" target="_blank">X</a>
     <a href="https://www.youtube.com/@souonkkz" target="_blank">YouTube</a>
   </div>
 </footer>
-
-<script>
-setTimeout(()=>{
-  document.getElementById("lateText").style.opacity = .45;
-}, 60000);
-</script>
 
 </body>
 </html>
