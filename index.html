@@ -1,217 +1,245 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Registro — Antes e Depois</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NK — Antes e Depois</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-:root{
-  --bg1:#0f172a;
-  --bg2:#1e293b;
-  --card:#0b1220;
-  --text:#e5e7eb;
-  --title:#f8fafc;
-  --border:rgba(255,255,255,.12);
-}
+  <style>
+    :root{
+      --bg1:#0f172a;
+      --bg2:#1e293b;
+      --card:#0b1220;
+      --text:#e5e7eb;
+      --title:#f8fafc;
+      --border:rgba(255,255,255,.12);
+      --accent:#38bdf8;
+    }
 
-body.light{
-  --bg1:#eef2f7;
-  --bg2:#e5e9f2;
-  --card:#ffffff;
-  --text:#1f2937;
-  --title:#0f172a;
-  --border:rgba(0,0,0,.12);
-}
+    body.light{
+      --bg1:#e9eff7;
+      --bg2:#f4f6fb;
+      --card:#ffffff;
+      --text:#1f2937;
+      --title:#0f172a;
+      --border:rgba(0,0,0,.12);
+    }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Inter,system-ui,sans-serif;
-}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Inter,system-ui,sans-serif;
+    }
 
-html{scroll-behavior:smooth}
+    body{
+      min-height:100vh;
+      background:linear-gradient(135deg,var(--bg1),var(--bg2));
+      color:var(--text);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:24px 20px 60px;
+    }
 
-body{
-  min-height:100vh;
-  background:linear-gradient(135deg,var(--bg1),var(--bg2));
-  color:var(--text);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding:28px 20px 60px;
-}
+    header{
+      width:100%;
+      max-width:1100px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:24px;
+    }
 
-header{
-  width:100%;
-  max-width:1000px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:48px;
-}
+    h1{
+      font-size:32px;
+      font-weight:600;
+      color:var(--title);
+      letter-spacing:.4px;
+    }
 
-h1{
-  font-size:32px;
-  font-weight:600;
-  color:var(--title);
-  letter-spacing:.4px;
-}
+    .theme-btn{
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:transparent;
+      color:var(--text);
+      cursor:pointer;
+      font-size:13px;
+    }
 
-.subtitle{
-  font-size:13px;
-  opacity:.6;
-  margin-top:6px;
-}
+    .theme-btn:hover{
+      background:rgba(255,255,255,.06);
+    }
 
-button{
-  border:1px solid var(--border);
-  background:transparent;
-  color:var(--text);
-  padding:10px 14px;
-  border-radius:999px;
-  cursor:pointer;
-  font-size:13px;
-}
+    .description{
+      max-width:880px;
+      text-align:center;
+      font-size:15px;
+      line-height:1.6;
+      opacity:.75;
+      margin-bottom:34px;
+    }
 
-button:hover{
-  background:rgba(255,255,255,.05);
-}
+    .container{
+      width:100%;
+      max-width:1100px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+    }
 
-.description{
-  max-width:720px;
-  text-align:center;
-  font-size:15px;
-  line-height:1.6;
-  opacity:.75;
-  margin-bottom:48px;
-}
+    .card-wrap{
+      background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.02)
+      );
+      padding:1px;
+      border-radius:22px;
+    }
 
-.slider{
-  width:100%;
-  max-width:900px;
-  position:relative;
-  border-radius:22px;
-  overflow:hidden;
-  background:var(--card);
-  border:1px solid var(--border);
-}
+    .img-box{
+      background:var(--card);
+      border-radius:21px;
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+      min-height:500px;
+      border:1px solid var(--border);
+      transition:transform .25s ease;
+    }
 
-.slider img{
-  width:100%;
-  height:440px;
-  object-fit:cover;
-  display:block;
-}
+    .img-box:hover{
+      transform:translateY(-2px);
+    }
 
-.after{
-  position:absolute;
-  inset:0;
-  width:50%;
-  overflow:hidden;
-}
+    .label{
+      font-size:14px;
+      font-weight:500;
+      letter-spacing:.4px;
+      opacity:.8;
+      text-transform:uppercase;
+    }
 
-.divider{
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:50%;
-  width:1px;
-  background:rgba(255,255,255,.35);
-  pointer-events:none;
-}
+    .img-box img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+      border-radius:16px;
+      border:1px solid var(--border);
+    }
 
-.tag{
-  position:absolute;
-  top:14px;
-  font-size:12px;
-  padding:6px 12px;
-  border-radius:999px;
-  background:rgba(0,0,0,.45);
-  color:#fff;
-  letter-spacing:.3px;
-}
+    .video{
+      margin-top:36px;
+      max-width:900px;
+      width:100%;
+    }
 
-.tag.left{left:14px}
-.tag.right{right:14px}
+    .video iframe{
+      width:100%;
+      height:440px;
+      border-radius:16px;
+      border:1px solid var(--border);
+    }
 
-.range{
-  width:100%;
-  max-width:900px;
-  margin:18px 0 42px;
-}
+    footer{
+      margin-top:32px;
+      text-align:center;
+      font-size:14px;
+      opacity:.75;
+    }
 
-.footer-note{
-  max-width:700px;
-  text-align:center;
-  font-size:14px;
-  opacity:.6;
-  margin-top:40px;
-}
+    .socials a{
+      margin:0 10px;
+      color:var(--text);
+      text-decoration:none;
+      transition:.25s;
+    }
 
-@media(max-width:700px){
-  h1{font-size:26px}
-  .slider img{height:300px}
-}
-</style>
+    .socials a:hover{
+      color:var(--accent);
+    }
+
+    @media(max-width:700px){
+      .container{grid-template-columns:1fr;gap:18px;}
+      h1{font-size:26px;}
+      .video iframe{height:300px;}
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <div>
-    <h1>Registro visual</h1>
-    <div class="subtitle">arquivo • 2026</div>
-  </div>
-  <button id="theme">Tema</button>
+  <h1>Antes e Depois</h1>
+  <button id="themeToggle" class="theme-btn">Tema</button>
 </header>
 
 <p class="description">
-  algumas mudanças não precisam de explicação.<br>
-  o tempo costuma fazer isso melhor que qualquer narrativa.
+  algumas mudanças falam por si.<br>
+  o resto é só registro.
 </p>
 
-<div class="slider">
-  <span class="tag left">Antes</span>
-  <span class="tag right">Depois</span>
+<div class="container">
 
-  <img src="img/antes.jpg" alt="Antes" loading="lazy">
-  <div class="after" id="after">
-    <img src="img/depois.jpg" alt="Depois" loading="lazy">
+  <div class="card-wrap">
+    <div class="img-box">
+      <div class="label">Antes</div>
+      <img src="img/antes.jpg" alt="Imagem antes" loading="lazy">
+    </div>
   </div>
-  <div class="divider" id="divider"></div>
+
+  <div class="card-wrap">
+    <div class="img-box">
+      <div class="label">Depois</div>
+      <img src="img/depois.jpg" alt="Imagem depois" loading="lazy">
+    </div>
+  </div>
+
 </div>
 
-<input type="range" min="0" max="100" value="50" class="range" id="range">
+<div class="video">
+  <iframe 
+    loading="lazy"
+    src="https://www.youtube.com/embed/UMB_vt5_LD4"
+    title="YouTube video player"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
 
-<p class="footer-note">
-  isso não é um antes e depois.<br>
-  é só o tempo fazendo o trabalho dele.
-</p>
+<footer>
+  <p>Siga nas redes:</p>
+  <div class="socials">
+    <a href="https://www.instagram.com/eonkkz/" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a href="https://x.com/Nkzinnn_" target="_blank">
+      <i class="fab fa-x-twitter"></i> X
+    </a>
+    <a href="https://www.youtube.com/@souonkkz" target="_blank">
+      <i class="fab fa-youtube"></i> YouTube
+    </a>
+  </div>
+</footer>
 
 <script>
-const range = document.getElementById('range');
-const after = document.getElementById('after');
-const divider = document.getElementById('divider');
+  const btn = document.getElementById('themeToggle');
+  if(localStorage.theme === 'light') document.body.classList.add('light');
 
-range.oninput = () => {
-  after.style.width = range.value + '%';
-  divider.style.left = range.value + '%';
-};
-
-const themeBtn = document.getElementById('theme');
-if(localStorage.theme === 'light') document.body.classList.add('light');
-
-themeBtn.onclick = () => {
-  document.body.classList.toggle('light');
-  localStorage.theme =
-    document.body.classList.contains('light') ? 'light' : 'dark';
-};
+  btn.onclick = () => {
+    document.body.classList.toggle('light');
+    localStorage.theme =
+      document.body.classList.contains('light') ? 'light' : 'dark';
+  };
 </script>
 
 </body>
