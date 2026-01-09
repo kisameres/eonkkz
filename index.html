@@ -29,7 +29,7 @@ body{
   display:flex;
   flex-direction:column;
   align-items:center;
-  padding:40px 20px 90px;
+  padding:40px 20px 120px;
 }
 
 img{filter:grayscale(100%) contrast(1.08)}
@@ -53,6 +53,14 @@ h1{
   margin-top:8px;
 }
 
+.date{
+  margin-top:6px;
+  font-size:10px;
+  letter-spacing:.6px;
+  opacity:.35;
+}
+
+/* descrição */
 .description{
   max-width:760px;
   text-align:center;
@@ -60,6 +68,16 @@ h1{
   line-height:1.9;
   opacity:.6;
   margin-bottom:64px;
+}
+
+/* nota de copista */
+.scribe{
+  max-width:720px;
+  font-family:"Libre Baskerville",serif;
+  font-size:13px;
+  opacity:.5;
+  text-align:center;
+  margin-bottom:80px;
 }
 
 /* antes / depois */
@@ -104,6 +122,16 @@ h1{
   opacity:.7;
 }
 
+/* marginais */
+.marginal{
+  margin:70px 0 10px;
+  font-family:"Libre Baskerville",serif;
+  font-size:12px;
+  letter-spacing:.4px;
+  opacity:.45;
+  text-align:center;
+}
+
 /* intervalo */
 .interval{
   margin:100px 0;
@@ -140,9 +168,29 @@ h1{
 
 .poem span{display:block}
 
+/* revelação tardia */
+.late{
+  margin-top:80px;
+  font-family:"Libre Baskerville",serif;
+  font-size:13px;
+  text-align:center;
+  opacity:0;
+  transition:opacity 2s ease;
+}
+
+/* imagem sem nome */
+.unnamed{
+  margin:90px 0;
+  width:100%;
+  max-width:480px;
+  height:260px;
+  border:1px solid rgba(255,255,255,.18);
+  opacity:.25;
+}
+
 /* fragmentos */
 .books{
-  margin-top:80px;
+  margin-top:90px;
   max-width:1000px;
   width:100%;
 }
@@ -206,9 +254,9 @@ h1{
 
 /* rodapé */
 footer{
-  margin-top:100px;
+  margin-top:120px;
   font-size:12px;
-  opacity:.55;
+  opacity:.5;
   text-align:center;
 }
 
@@ -222,11 +270,7 @@ footer{
   margin:0 12px;
   font-size:12px;
   letter-spacing:.4px;
-  opacity:.65;
-}
-
-.socials a:hover{
-  opacity:1;
+  opacity:.6;
 }
 
 @media(max-width:700px){
@@ -241,6 +285,7 @@ footer{
 <header>
   <h1>Antes e Depois</h1>
   <div class="subtitle">memoria consignata</div>
+  <div class="date">tempore ignoto</div>
 </header>
 
 <p class="description">
@@ -248,6 +293,11 @@ footer{
   Não irrompem, não disputam lugar.<br>
   Apenas subsistem, até que tudo o mais cesse.
 </p>
+
+<div class="scribe">
+  Haec pagina non integra est.<br>
+  O que aqui se lê não foi disposto para ser completo.
+</div>
 
 <div class="container">
 
@@ -271,6 +321,8 @@ footer{
 
 </div>
 
+<div class="marginal">non omnia servantur</div>
+
 <div class="interval">
   <div class="line"></div>
   <div class="void"></div>
@@ -283,6 +335,10 @@ footer{
   <span>Nele, o ser não avança nem recua;</span>
   <span>consente apenas em permanecer.</span>
 </div>
+
+<div class="marginal">hoc manet</div>
+
+<div class="unnamed"></div>
 
 <section class="books">
 
@@ -329,15 +385,24 @@ footer{
 
 </section>
 
+<div class="late" id="lateText">
+  tarde demais não é o mesmo que nunca.
+</div>
+
 <footer>
-  <p>em outros lugares:</p>
+  <p>scriptum manet.</p>
   <div class="socials">
     <a href="https://www.instagram.com/eonkkz/" target="_blank">Instagram</a>
     <a href="https://x.com/Nkzinnn_" target="_blank">X</a>
     <a href="https://www.youtube.com/@souonkkz" target="_blank">YouTube</a>
   </div>
-  <p style="margin-top:14px;">kisame.org.</p>
 </footer>
+
+<script>
+setTimeout(()=>{
+  document.getElementById("lateText").style.opacity = .45;
+}, 60000);
+</script>
 
 </body>
 </html>
