@@ -166,9 +166,7 @@ h1{
   opacity:.9;
 }
 
-.latin-poem span{
-  display:block;
-}
+.latin-poem span{display:block}
 
 /* poema principal */
 .poem{
@@ -182,6 +180,70 @@ h1{
 }
 
 .poem span{display:block}
+
+/* fragmentos */
+.books{
+  margin-top:90px;
+  max-width:1000px;
+  width:100%;
+}
+
+.era{
+  margin-bottom:64px;
+}
+
+.era h2{
+  font-size:12px;
+  letter-spacing:.6px;
+  text-transform:uppercase;
+  opacity:.5;
+  margin-bottom:26px;
+  text-align:center;
+}
+
+.book-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.page{
+  background:var(--paper);
+  color:#111;
+  padding:30px 28px;
+  border-radius:12px;
+  font-family:"Libre Baskerville",serif;
+  font-size:14px;
+  line-height:1.75;
+  box-shadow:0 16px 36px rgba(0,0,0,.45);
+}
+
+.author{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:18px;
+}
+
+.author img{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+}
+
+.author span{
+  font-size:11px;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  opacity:.6;
+}
+
+.page em{
+  display:block;
+  margin-top:22px;
+  font-size:12px;
+  opacity:.6;
+}
 
 /* rodapé */
 footer{
@@ -202,11 +264,6 @@ footer{
   font-size:12px;
   letter-spacing:.4px;
   opacity:.6;
-}
-
-@media(max-width:700px){
-  .container{grid-template-columns:1fr}
-  h1{font-size:24px}
 }
 </style>
 </head>
@@ -231,10 +288,9 @@ footer{
 </div>
 
 <div class="container">
-
   <div class="img-box">
     <div class="label">Antes</div>
-    <img src="img/antes.jpg" alt="Antes">
+    <img src="img/antes.jpg">
     <div class="caption-poem">
       Aqui a forma precedia o juízo.<br>
       O tempo ainda não pesava.
@@ -243,13 +299,12 @@ footer{
 
   <div class="img-box">
     <div class="label">Depois</div>
-    <img src="img/depois.jpg" alt="Depois">
+    <img src="img/depois.jpg">
     <div class="caption-poem">
       Aqui resta o vestígio, não o ato.<br>
       O tempo cumpriu sua medida.
     </div>
   </div>
-
 </div>
 
 <div class="marginal">non omnia servantur</div>
@@ -260,7 +315,6 @@ footer{
   <div class="line"></div>
 </div>
 
-<!-- 🕯️ POEMA EM LATIM MEDIEVAL -->
 <div class="latin-poem">
   <span>Quod fuit non redit,</span>
   <span>sed umbra eius manet.</span>
@@ -273,12 +327,46 @@ footer{
   <span>silentium habitat.</span>
 </div>
 
-<div class="poem">
-  <span>Entre o que foi e o que cessou de sê-lo,</span>
-  <span>não se abriu ruína, mas ínterim.</span>
-  <span>Nele, o ser não avança nem recua;</span>
-  <span>consente apenas em permanecer.</span>
-</div>
+<section class="books">
+
+  <div class="era">
+    <h2>antiguidade</h2>
+    <div class="book-grid">
+      <div class="page">
+        <div class="author">
+          <img src="img/seneca.jpg">
+          <span>Sêneca</span>
+        </div>
+        “Não carecemos de tempo, mas o deixamos perder.”
+        <em>— Cartas a Lucílio</em>
+      </div>
+
+      <div class="page">
+        <div class="author">
+          <img src="img/marco-aurelio.jpg">
+          <span>Marco Aurélio</span>
+        </div>
+        “Quase tudo quanto dizemos excede o preciso.”
+        <em>— Meditações</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="era">
+    <h2>idade moderna</h2>
+    <div class="book-grid">
+      <div class="page">
+        <div class="author">
+          <img src="img/nietzsche.jpg">
+          <span>Friedrich Nietzsche</span>
+        </div>
+        “Aquele que combate monstros deve vigiar a si mesmo.”
+        <em>— Além do Bem e do Mal</em>
+      </div>
+    </div>
+  </div>
+
+</section>
 
 <footer>
   <p>scriptum manet.</p>
