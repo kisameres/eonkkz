@@ -29,7 +29,7 @@ body{
   display:flex;
   flex-direction:column;
   align-items:center;
-  padding:32px 20px 64px;
+  padding:32px 20px 80px;
 }
 
 img{filter:grayscale(100%) contrast(1.05)}
@@ -89,13 +89,35 @@ h1{font-size:30px;font-weight:500;color:var(--title)}
   margin:16px 0;
 }
 
-/* poema curto sob imagens */
 .caption-poem{
   font-family:"Libre Baskerville",serif;
   font-size:13px;
   line-height:1.6;
   text-align:center;
   opacity:.75;
+}
+
+/* 🕯️ INTERVALO — O QUE FALTAVA */
+.interval{
+  margin:90px 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:26px;
+}
+
+.interval .line{
+  width:120px;
+  height:1px;
+  background:rgba(255,255,255,.35);
+}
+
+.interval .void{
+  width:100%;
+  max-width:420px;
+  height:90px;
+  border:1px solid rgba(255,255,255,.15);
+  opacity:.25;
 }
 
 /* poema central */
@@ -111,7 +133,7 @@ h1{font-size:30px;font-weight:500;color:var(--title)}
 
 .poem span{display:block}
 
-/* glosas poéticas */
+/* glosa */
 .gloss{
   margin:70px 0 20px;
   font-family:"Libre Baskerville",serif;
@@ -167,7 +189,6 @@ h1{font-size:30px;font-weight:500;color:var(--title)}
   width:42px;
   height:42px;
   border-radius:50%;
-  object-fit:cover;
 }
 
 .author span{
@@ -219,8 +240,7 @@ footer{
     <img src="img/antes.jpg" alt="Antes">
     <div class="caption-poem">
       Aqui a forma ainda sustentava o nome.<br>
-      Nada urgia, nada faltava.<br>
-      O mundo repousava em si.
+      O tempo não urgia.
     </div>
   </div>
 
@@ -228,76 +248,32 @@ footer{
     <div class="label">Depois</div>
     <img src="img/depois.jpg" alt="Depois">
     <div class="caption-poem">
-      Aqui já não há promessa.<br>
-      Resta o traço, não o gesto.<br>
-      O tempo cumpriu seu ofício.
+      Aqui resta o traço, não o gesto.<br>
+      O tempo cumpriu-se.
     </div>
   </div>
 
 </div>
 
-<!-- poema central -->
+<!-- 🕯️ INTERVALO -->
+<div class="interval">
+  <div class="line"></div>
+  <div class="void"></div>
+  <div class="line"></div>
+</div>
+
+<!-- POEMA CENTRAL -->
 <div class="poem">
   <span>Entre o que foi e o que cessou de sê-lo,</span>
-  <span>ergueu-se um intervalo sem voz.</span>
-  <span>Não foi perda, nem queda,</span>
-  <span>mas o peso exato da permanência.</span>
-  <br>
-  <span>O antes guardava a figura.</span>
-  <span>O depois reteve o vestígio.</span>
-  <span>E o intervalo —</span>
-  <span>esse não se deixa nomear.</span>
+  <span>não houve queda, mas suspensão.</span>
+  <span>O mundo reteve o fôlego,</span>
+  <span>e nisso se transformou.</span>
 </div>
 
 <div class="gloss">
-  o que permanece não clama por memória;<br>
+  o que permanece não pede voz;<br>
   apenas consente em durar.
 </div>
-
-<section class="books">
-
-  <div class="era">
-    <h2>antiguidade</h2>
-    <div class="book-grid">
-
-      <div class="page">
-        <div class="author">
-          <img src="img/seneca.jpg" alt="Sêneca">
-          <span>Sêneca</span>
-        </div>
-        “Não carecemos de tempo, mas o deixamos perder.”
-        <em>— Cartas a Lucílio</em>
-      </div>
-
-      <div class="page">
-        <div class="author">
-          <img src="img/marco-aurelio.jpg" alt="Marco Aurélio">
-          <span>Marco Aurélio</span>
-        </div>
-        “Quase tudo quanto dizemos excede o preciso.”
-        <em>— Meditações</em>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="era">
-    <h2>idade moderna</h2>
-    <div class="book-grid">
-
-      <div class="page">
-        <div class="author">
-          <img src="img/nietzsche.jpg" alt="Friedrich Nietzsche">
-          <span>Friedrich Nietzsche</span>
-        </div>
-        “Aquele que combate monstros deve vigiar a si mesmo.”
-        <em>— Além do Bem e do Mal</em>
-      </div>
-
-    </div>
-  </div>
-
-</section>
 
 <footer>
   <p>scriptum manet.</p>
