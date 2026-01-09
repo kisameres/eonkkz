@@ -12,9 +12,9 @@
 <style>
 :root{
   --bg:#000;
-  --text:#e5e5e5;
+  --text:#e6e6e6;
   --title:#fff;
-  --border:rgba(255,255,255,.2);
+  --border:rgba(255,255,255,.18);
   --paper:#fff;
 }
 
@@ -29,117 +29,130 @@ body{
   display:flex;
   flex-direction:column;
   align-items:center;
-  padding:32px 20px 80px;
+  padding:40px 20px 90px;
 }
 
-img{filter:grayscale(100%) contrast(1.05)}
+img{filter:grayscale(100%) contrast(1.08)}
 
 header{
   width:100%;
   max-width:1100px;
   display:flex;
-  justify-content:space-between;
+  justify-content:center;
   align-items:center;
-  margin-bottom:42px;
+  margin-bottom:46px;
 }
 
-h1{font-size:30px;font-weight:500;color:var(--title)}
-.subtitle{font-size:12px;opacity:.45;margin-top:6px}
+h1{
+  font-size:30px;
+  font-weight:500;
+  color:var(--title);
+  letter-spacing:.3px;
+}
 
+.subtitle{
+  font-size:11px;
+  opacity:.42;
+  margin-top:8px;
+  text-align:center;
+}
+
+/* descrição */
 .description{
   max-width:760px;
   text-align:center;
   font-size:15px;
-  line-height:1.7;
-  opacity:.65;
-  margin-bottom:52px;
+  line-height:1.85;
+  opacity:.62;
+  margin-bottom:58px;
 }
 
-/* ANTES / DEPOIS */
+/* antes / depois */
 .container{
   width:100%;
   max-width:1100px;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:32px;
+  gap:34px;
 }
 
 .img-box{
   border:1px solid var(--border);
-  padding:18px;
-  border-radius:16px;
+  padding:20px;
+  border-radius:14px;
   display:flex;
   flex-direction:column;
   align-items:center;
 }
 
 .label{
-  font-size:12px;
-  letter-spacing:.6px;
-  opacity:.55;
+  font-size:11px;
+  letter-spacing:.7px;
+  opacity:.5;
   text-transform:uppercase;
 }
 
 .img-box img{
   width:100%;
-  height:380px;
+  height:360px;
   object-fit:cover;
-  border-radius:12px;
+  border-radius:10px;
   border:1px solid var(--border);
-  margin:16px 0;
+  margin:18px 0;
 }
 
+/* glosa sob imagens */
 .caption-poem{
   font-family:"Libre Baskerville",serif;
   font-size:13px;
-  line-height:1.6;
+  line-height:1.7;
   text-align:center;
-  opacity:.75;
+  opacity:.7;
 }
 
-/* 🕯️ INTERVALO — O QUE FALTAVA */
+/* intervalo ritual */
 .interval{
-  margin:90px 0;
+  margin:96px 0;
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:26px;
+  gap:28px;
 }
 
 .interval .line{
-  width:120px;
+  width:140px;
   height:1px;
-  background:rgba(255,255,255,.35);
+  background:rgba(255,255,255,.3);
 }
 
 .interval .void{
   width:100%;
-  max-width:420px;
-  height:90px;
-  border:1px solid rgba(255,255,255,.15);
-  opacity:.25;
+  max-width:460px;
+  height:96px;
+  border:1px solid rgba(255,255,255,.14);
+  opacity:.22;
 }
 
 /* poema central */
 .poem{
-  margin:90px 0;
-  max-width:720px;
+  margin:96px 0 60px;
+  max-width:740px;
   font-family:"Libre Baskerville",serif;
   font-size:15px;
-  line-height:1.9;
+  line-height:2;
   text-align:center;
-  opacity:.9;
+  opacity:.92;
 }
 
 .poem span{display:block}
 
-/* glosa */
+/* glosa final */
 .gloss{
-  margin:70px 0 20px;
+  margin:80px 0 30px;
   font-family:"Libre Baskerville",serif;
   font-size:14px;
   text-align:center;
-  opacity:.55;
+  opacity:.5;
 }
 
 /* fragmentos */
@@ -149,40 +162,42 @@ h1{font-size:30px;font-weight:500;color:var(--title)}
   width:100%;
 }
 
-.era{margin-bottom:56px}
+.era{
+  margin-bottom:60px;
+}
 
 .era h2{
-  font-size:13px;
+  font-size:12px;
   font-weight:500;
-  letter-spacing:.4px;
+  letter-spacing:.6px;
   text-transform:uppercase;
-  opacity:.55;
-  margin-bottom:22px;
+  opacity:.5;
+  margin-bottom:24px;
   text-align:center;
 }
 
 .book-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:26px;
+  gap:28px;
 }
 
 .page{
   background:var(--paper);
   color:#111;
-  padding:26px 24px;
+  padding:28px 26px;
   border-radius:12px;
   font-family:"Libre Baskerville",serif;
   font-size:14px;
-  line-height:1.65;
-  box-shadow:0 12px 30px rgba(0,0,0,.35);
+  line-height:1.7;
+  box-shadow:0 14px 34px rgba(0,0,0,.4);
 }
 
 .author{
   display:flex;
   align-items:center;
   gap:14px;
-  margin-bottom:14px;
+  margin-bottom:16px;
 }
 
 .author img{
@@ -192,23 +207,23 @@ h1{font-size:30px;font-weight:500;color:var(--title)}
 }
 
 .author span{
-  font-size:12px;
-  letter-spacing:.4px;
+  font-size:11px;
+  letter-spacing:.5px;
   text-transform:uppercase;
   opacity:.6;
 }
 
 .page em{
   display:block;
-  margin-top:18px;
+  margin-top:20px;
   font-size:12px;
-  opacity:.65;
+  opacity:.6;
 }
 
 footer{
-  margin-top:80px;
-  font-size:13px;
-  opacity:.6;
+  margin-top:90px;
+  font-size:12px;
+  opacity:.55;
   text-align:center;
 }
 
@@ -224,13 +239,14 @@ footer{
 <header>
   <div>
     <h1>Antes e Depois</h1>
-    <div class="subtitle">memoria consignada</div>
+    <div class="subtitle">memoria consignata</div>
   </div>
 </header>
 
 <p class="description">
-  certas mudanças não clamam.<br>
-  apenas permanecem no tempo.
+  Certas mutações não se anunciam.<br>
+  Não clamam, não irrompem —<br>
+  apenas subsistem, até que tudo mais cesse.
 </p>
 
 <div class="container">
@@ -239,8 +255,8 @@ footer{
     <div class="label">Antes</div>
     <img src="img/antes.jpg" alt="Antes">
     <div class="caption-poem">
-      Aqui a forma ainda sustentava o nome.<br>
-      O tempo não urgia.
+      Aqui a forma precedia o juízo.<br>
+      O tempo ainda não pesava.
     </div>
   </div>
 
@@ -248,14 +264,14 @@ footer{
     <div class="label">Depois</div>
     <img src="img/depois.jpg" alt="Depois">
     <div class="caption-poem">
-      Aqui resta o traço, não o gesto.<br>
-      O tempo cumpriu-se.
+      Aqui resta o vestígio, não o ato.<br>
+      O tempo cumpriu sua medida.
     </div>
   </div>
 
 </div>
 
-<!-- 🕯️ INTERVALO -->
+<!-- INTERVALO -->
 <div class="interval">
   <div class="line"></div>
   <div class="void"></div>
@@ -265,14 +281,19 @@ footer{
 <!-- POEMA CENTRAL -->
 <div class="poem">
   <span>Entre o que foi e o que cessou de sê-lo,</span>
-  <span>não houve queda, mas suspensão.</span>
-  <span>O mundo reteve o fôlego,</span>
-  <span>e nisso se transformou.</span>
+  <span>não se abriu ruína, mas ínterim.</span>
+  <span>Nele, o ser não avança nem recua;</span>
+  <span>apenas consente em permanecer.</span>
+  <br>
+  <span>O antes detinha a figura.</span>
+  <span>O depois conserva o traço.</span>
+  <span>O entre —</span>
+  <span>esse não se deixa consignar.</span>
 </div>
 
 <div class="gloss">
-  o que permanece não pede voz;<br>
-  apenas consente em durar.
+  o que subsiste não reclama memória;<br>
+  basta-lhe não ser revogado.
 </div>
 
 <footer>
